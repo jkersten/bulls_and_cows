@@ -1,0 +1,15 @@
+#pragma once
+
+#include <iostream>
+#include <set>
+
+#include "shared.hpp"
+
+class Screen {
+public:
+    void intro(size_t word_length, unsigned short max_tries) const;
+    void guess(unsigned short guess) const;
+    void bullsAndCows(BullsCowsCount count) const;
+    void showErrors(std::set<ValidationError> errors, std::string input) const;
+    void won() const;
+};

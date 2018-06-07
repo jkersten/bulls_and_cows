@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C8DF4AF620C7CFD900360B5A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8DF4AF520C7CFD900360B5A /* main.cpp */; };
 		C8FCC87B20C9EC9700ABEE50 /* screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8FCC87A20C9EC9700ABEE50 /* screen.cpp */; };
+		C8FCC87E20C9EF9A00ABEE50 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8FCC87C20C9EF9A00ABEE50 /* input.cpp */; };
+		C8FCC88220C9F10C00ABEE50 /* bulls_cows_game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8FCC88020C9F10C00ABEE50 /* bulls_cows_game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +28,13 @@
 /* Begin PBXFileReference section */
 		C8DF4AF220C7CFD900360B5A /* BullsCowsGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BullsCowsGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DF4AF520C7CFD900360B5A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		C8FCC87920C9EC3400ABEE50 /* screen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = screen.h; sourceTree = "<group>"; };
 		C8FCC87A20C9EC9700ABEE50 /* screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = screen.cpp; sourceTree = "<group>"; };
+		C8FCC87C20C9EF9A00ABEE50 /* input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
+		C8FCC87D20C9EF9A00ABEE50 /* input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = input.hpp; sourceTree = "<group>"; };
+		C8FCC87F20C9F02E00ABEE50 /* screen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = screen.hpp; sourceTree = "<group>"; };
+		C8FCC88020C9F10C00ABEE50 /* bulls_cows_game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bulls_cows_game.cpp; sourceTree = "<group>"; };
+		C8FCC88120C9F10C00ABEE50 /* bulls_cows_game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = bulls_cows_game.hpp; sourceTree = "<group>"; };
+		C8FCC88320C9F2FA00ABEE50 /* shared.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = shared.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +67,14 @@
 		C8DF4AF420C7CFD900360B5A /* BullsCowsGame */ = {
 			isa = PBXGroup;
 			children = (
+				C8FCC87F20C9F02E00ABEE50 /* screen.hpp */,
 				C8DF4AF520C7CFD900360B5A /* main.cpp */,
-				C8FCC87920C9EC3400ABEE50 /* screen.h */,
 				C8FCC87A20C9EC9700ABEE50 /* screen.cpp */,
+				C8FCC87C20C9EF9A00ABEE50 /* input.cpp */,
+				C8FCC87D20C9EF9A00ABEE50 /* input.hpp */,
+				C8FCC88020C9F10C00ABEE50 /* bulls_cows_game.cpp */,
+				C8FCC88120C9F10C00ABEE50 /* bulls_cows_game.hpp */,
+				C8FCC88320C9F2FA00ABEE50 /* shared.hpp */,
 			);
 			path = BullsCowsGame;
 			sourceTree = "<group>";
@@ -125,6 +137,8 @@
 			files = (
 				C8DF4AF620C7CFD900360B5A /* main.cpp in Sources */,
 				C8FCC87B20C9EC9700ABEE50 /* screen.cpp in Sources */,
+				C8FCC88220C9F10C00ABEE50 /* bulls_cows_game.cpp in Sources */,
+				C8FCC87E20C9EF9A00ABEE50 /* input.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
