@@ -1,8 +1,10 @@
 #pragma once
 
+#include <set>
+
 struct BullsCowsCount {
-    unsigned short bulls = 0;
-    unsigned short cows = 0;
+    std::set<char> bulls;
+    std::set<char> cows;
 };
 
 enum class ValidationError {

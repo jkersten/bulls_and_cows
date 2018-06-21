@@ -28,11 +28,11 @@ void BullsCowsGame::run() {
             input = getValidInput();
             auto result = countBullsAndCows(input);
             
-            if (result.bulls == hiddenWordLength()) {
-                screen->won();
+            if (result.bulls.size() == hiddenWordLength()) {
                 screen.won();
                 break;
             } else {
+                screen.bullsAndCows(input, hidden_word);
                 screen.bullsAndCows(result);
             }
         }
@@ -79,9 +79,9 @@ BullsCowsCount BullsCowsGame::countBullsAndCows(const std::string input) const {
         for (auto wc = 0; wc < hidden_word.length(); ++wc) {
             if (input[ic] == hidden_word[wc]) {
                 if (ic == wc) {
-                    result.bulls++;
+                    result.bulls.insert(input[ic]);
                 } else {
-                    result.cows++;
+                    result.cows.insert(input[ic]);
                 }
             }
         }
