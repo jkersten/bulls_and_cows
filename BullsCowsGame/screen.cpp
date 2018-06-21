@@ -15,9 +15,26 @@ void Screen::guess(unsigned short guess) const {
     std::cout <<"\nGuess " << guess << ": _____\b\b\b\b\b";
 }
 
-void Screen::bullsAndCows(BullsCowsCount count) const {
-    std::cout << "  Bulls: " << count.bulls << std::endl;
-    std::cout << "  Cows: " << count.cows << std::endl;
+void Screen::bullsAndCows(BullsCowsCount result) const {
+    std::cout << "  Bulls: ";
+    for(auto character : result.bulls)
+        std::cout << character << " ";
+    std::cout << "\n  Cows: ";
+    for(auto character : result.cows)
+        std::cout << character << " ";
+    std::cout << std::endl;
+}
+
+void Screen::bullsAndCows(std::string guess, std::string hidden_word) const {
+    std::cout << "         ";
+    for (auto i = 0; i < guess.length(); ++i) {
+        if (guess[i] == hidden_word[i]) {
+            std::cout << "*";
+        } else {
+            std::cout << " ";
+        }
+    }
+    std::cout << std::endl;
 }
 
 void Screen::showErrors(std::set<ValidationError> errors, std::string input) const {
