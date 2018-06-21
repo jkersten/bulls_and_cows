@@ -36,7 +36,11 @@ void BullsCowsGame::run() {
                 screen.bullsAndCows(result);
             }
         }
-    } while(this->input->playAgain());
+        
+        if (input != hidden_word) {
+            screen.lost(hidden_word);
+        }
+    } while(this->input.playAgain());
 }
 
 std::string BullsCowsGame::getValidInput() const {

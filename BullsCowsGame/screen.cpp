@@ -1,5 +1,3 @@
-#pragma once
-
 #include "screen.hpp"
 
 void Screen::intro(size_t word_length, unsigned short max_tries) const {
@@ -36,5 +34,13 @@ void Screen::won() const {
     std::cout << "\n--------------------------------------------------\n";
     std::cout << "CONGRATULATIONS! You've found the word!\n";
     std::cout << "Do you want to start a new game? (y/n)\n";
+    std::cout << "--------------------------------------------------\n";
+}
+
+void Screen::lost(std::string hidden_word) const {
+    std::cout << "\n--------------------------------------------------\n";
+    std::cout << "Oh no you've lost!\n";
+    std::cout << "The word we were looking for was '" << hidden_word << "'\n";
+    std::cout << "Better luck next time! Play again? (y/n)\n";
     std::cout << "--------------------------------------------------\n";
 }

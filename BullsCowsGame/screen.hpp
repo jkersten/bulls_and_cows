@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 #include <set>
 
 #include "shared.hpp"
@@ -12,4 +13,5 @@ public:
     void bullsAndCows(BullsCowsCount count) const;
     void showErrors(std::set<ValidationError> errors, std::string input) const;
     void won() const;
+    void lost(std::string hidden_word) const;
 };
