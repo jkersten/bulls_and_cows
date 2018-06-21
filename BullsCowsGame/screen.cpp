@@ -1,7 +1,13 @@
 #include "screen.hpp"
 
 void Screen::intro(size_t word_length, unsigned short max_tries) const {
-    std::cout << "Welcome to Bulls and Cows, a fun word game.\n";
+    std::cout << "Welcome to Bulls and Cows, a fun word game.\n\n";
+    std::cout << "          }___{         ___ \n";
+    std::cout << "          (o o)        (o o) \n";
+    std::cout << "   /-------\\ /          \\ /-------\\ \n";
+    std::cout << "  / |      |O            O|      | \\ \n";
+    std::cout << " *  |-,--- |              |------|  * \n";
+    std::cout << "    ^      ^              ^      ^ \n\n";
     std::cout << "Can you guess the " << word_length << " letter isogram within " << max_tries << " tries?\n";
 }
     
