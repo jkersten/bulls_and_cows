@@ -4,11 +4,9 @@
 
 #include "bulls_cows_game.hpp"
 
-BullsCowsGame::BullsCowsGame(Screen *screen, Input *input, std::vector<std::string> words = { "brick", "jumpy", "waltz", "nymph", "bling", "track", "fjord", "frogs", "dwarf", "worth", "sloth", "peach", "paths", "round", "plane" }) {
-    this->words = words;
-    this->screen = screen;
-    this->input = input;
-    srand((unsigned int)time(NULL));
+BullsCowsGame::BullsCowsGame(const Screen & screen, const Input &input, const std::vector<std::string> &words = { "brick", "jumpy", "waltz", "nymph", "bling", "track", "fjord", "frogs", "dwarf", "worth", "sloth", "peach", "paths", "round", "plane" })
+    : screen(screen), input(input), words(words) {
+    srand(static_cast<unsigned int>(time(NULL)));
 }
 
 auto BullsCowsGame::hiddenWordLength() const { return hidden_word.length(); }
@@ -23,17 +21,19 @@ void BullsCowsGame::reset() {
 void BullsCowsGame::run() {
     do {
         reset();
-        screen->intro(hiddenWordLength(), maxTries());
+        screen.intro(hiddenWordLength(), maxTries());
         
+        std::string input = "";
         for (current_try = 1; current_try <= maxTries(); ++current_try) {
-            std::string input = getValidInput();
+            input = getValidInput();
             auto result = countBullsAndCows(input);
             
             if (result.bulls == hiddenWordLength()) {
                 screen->won();
+                screen.won();
                 break;
             } else {
-                screen->bullsAndCows(result);
+                screen.bullsAndCows(result);
             }
         }
     } while(this->input->playAgain());
@@ -43,10 +43,10 @@ std::string BullsCowsGame::getValidInput() const {
     std::string text = "";
     std::set<ValidationError> errors;
     do {
-        screen->guess(currentTry());
-        text = input->get();
+        screen.guess(currentTry());
+        text = input.get();
         errors = validate(text);
-        screen->showErrors(errors, text);
+        screen.showErrors(errors, text);
     } while(!errors.empty());
     return text;
 }

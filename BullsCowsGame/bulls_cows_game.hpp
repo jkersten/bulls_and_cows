@@ -10,7 +10,7 @@
 
 class BullsCowsGame {
 public:
-    BullsCowsGame(Screen *, Input *, std::vector<std::string>);
+    BullsCowsGame(const Screen &, const Input &, const std::vector<std::string> &);
 
     auto hiddenWordLength() const;
     auto currentTry() const;
@@ -24,8 +24,8 @@ public:
     BullsCowsCount countBullsAndCows(const std::string input) const;
     
 private:
-    Screen *screen;
-    Input *input;
+    const Screen &screen;
+    const Input &input;
     std::vector<std::string> words;
     std::string hidden_word;
     static constexpr unsigned short MAX_TRIES = 10;
