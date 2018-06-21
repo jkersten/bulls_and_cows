@@ -32,4 +32,5 @@ private:
     unsigned short current_try;
     
     bool isIsogram(std::string word) const;
+    bool isAlphabeticWord(std::string word) const;
 };

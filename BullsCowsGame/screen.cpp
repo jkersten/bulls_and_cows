@@ -17,6 +17,9 @@ void Screen::bullsAndCows(BullsCowsCount count) const {
 void Screen::showErrors(std::set<ValidationError> errors, std::string input) const {
     for (auto error : errors) {
         switch(error) {
+            case ValidationError::NO_WORD:
+                std::cout << "  '" << input << "' is not a word\n";
+                break;
             case ValidationError::NO_ISOGRAM:
                 std::cout << "  '" << input << "' is not an isogram\n";
                 break;

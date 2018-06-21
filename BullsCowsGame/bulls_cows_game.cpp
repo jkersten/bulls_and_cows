@@ -57,6 +57,10 @@ std::string BullsCowsGame::getValidInput() const {
 
 std::set<ValidationError> BullsCowsGame::validate(std::string input) const {
     std::set<ValidationError> result;
+    if (!isAlphabeticWord(input)) {
+        result.insert(ValidationError::NO_WORD);
+        return result;
+    }
     if (!isIsogram(input)) {
         result.insert(ValidationError::NO_ISOGRAM);
     }
@@ -89,6 +93,15 @@ bool BullsCowsGame::isIsogram(std::string word) const {
     std::set<char> unique;
     for (char c : word) {
         if (!unique.insert(c).second) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool BullsCowsGame::isAlphabeticWord(std::string word) const {
+    for (char c : word) {
+        if (!isalpha(c)) {
             return false;
         }
     }

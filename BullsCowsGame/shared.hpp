@@ -6,7 +6,8 @@ struct BullsCowsCount {
 };
 
 enum class ValidationError {
-    NO_ISOGRAM
+     NO_ISOGRAM
+    ,NO_WORD
     ,TOO_SHORT
     ,TOO_LONG
 };
